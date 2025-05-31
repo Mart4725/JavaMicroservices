@@ -1,7 +1,10 @@
 // model/Book.java
 package com.example.servidor.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Book {
@@ -12,6 +15,15 @@ public class Book {
     private String title;
     private String author;
     private int year;
+
+    public Book() {}
+
+    // Constructor útil para crear libros rápidamente
+    public Book(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
 
     // Getters y setters
 
